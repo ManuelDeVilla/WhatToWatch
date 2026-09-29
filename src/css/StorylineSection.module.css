@@ -1,0 +1,31 @@
+.storyline {
+  line-height: 1.8;
+}
+
+.genresContainer, .genresContainer > ul {
+  display: flex;
+  align-items: center;
+}
+
+.genresContainer {
+  padding: 0.5rem;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  gap: 20px;
+}
+
+.genresContainer > span {
+  font-weight: 700;
+}
+
+.genresContainer > ul {
+  gap: 10px;
+}
+
+.genresContainer > ul > li:first-child {
+  display: none;
+}
+
+.genresContainer > ul > li > a:hover {
+  text-decoration: underline;
+}

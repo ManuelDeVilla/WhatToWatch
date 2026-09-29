@@ -1,0 +1,27 @@
+.showsCarouselContainer {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  outline: 1px solid blue;
+}
+
+.track {
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.track > img {
+  flex: 0 0 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+}
+
+.prev { left: 0; }
+.next { right: 0; }

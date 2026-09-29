@@ -1,0 +1,39 @@
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.skeletonImg {
+  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+}
+
+.skeletonTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  padding: 0.5rem 0.2rem;
+}
+
+.skeletonLine {
+  padding: 0.5rem;
+  /* border: 1px solid black; */
+}
+
+.title { width: 40%; }
+.info { width: 50%; }
+
+.skeletonImg, .skeletonLine {
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

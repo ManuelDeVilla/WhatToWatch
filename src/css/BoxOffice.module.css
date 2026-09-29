@@ -1,0 +1,15 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.gridItems {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.textHeader {
+  font-weight: 700;
+}

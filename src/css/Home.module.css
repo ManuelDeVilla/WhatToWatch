@@ -1,0 +1,12 @@
+.homeContainer {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 0 6rem 1rem 6rem;
+  outline: 1px solid red;
+}
+
+.fullWidthCarousel {
+  margin: 0 -6rem;
+}

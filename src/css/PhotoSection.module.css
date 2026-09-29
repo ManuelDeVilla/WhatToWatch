@@ -1,0 +1,28 @@
+.photoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  outline: 1px solid red;
+}
+
+.justifiedLayoutContainer {
+  position: relative;
+
+}
+
+.photos {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.item > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.photos:last-child {
+  background-position: center;
+  background-repeat: no-repeat;
+}

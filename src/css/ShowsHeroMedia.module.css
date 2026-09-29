@@ -1,0 +1,282 @@
+.backgroundContainer {
+  margin: 0 -5rem;
+  /* background-color: rgb(20,20,20); */
+
+}
+.showHeroMediaContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-anchor: hidden;
+  gap: 10px;
+  padding: 1rem 6rem;
+  outline: 1px solid green;
+}
+
+.showHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 1px solid red;
+}
+
+.headerDetails {
+  display: flex;
+  gap: 10px;
+}
+
+.headerRatingContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.headerRating {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ratingLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: black;
+  outline: 1px solid red;
+}
+
+.currentRating {
+  font-size: 1.2rem;
+}
+
+.rating {
+  font-size: 0.7rem;
+}
+
+.rateButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.gridContainer {
+  min-height: 460px;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 0.8fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  'box-1 box-2 box-2 box-3'
+  'box-1 box-2 box-2 box-4';
+  gap: 5px;
+}
+
+.items {
+  outline: 1px solid red;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.items > .poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moreMedia {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.showBodyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Add carousel to genre */
+.genresContainer {
+  background: green;
+  min-width: 0;
+  position: relative;
+}
+
+.track {
+  flex: 0 1 100%;
+  display: flex;
+  gap: 10px;
+  overflow-x: hidden;
+  padding: 0.5rem 0;
+  scroll-snap-type: mandatory x;
+  scroll-padding: 5px;
+  outline: 1px solid red;
+  z-index: 1;
+}
+
+.track > a {
+  padding: 0.2rem 1rem;
+  text-wrap: nowrap;
+  border-radius: 12px;
+  scroll-snap-align: end;
+  outline: 1px solid red;
+}
+
+.bodyContainer {
+  display: flex;
+}
+
+.bodyInfo {
+  flex: 0 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.descContainerShow > span, .descContainerPerson > span {
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.noDescription > a {
+  display: inline;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.noDescription > a:hover {
+  color: var(--border-color)
+}
+
+.interactionContainer {
+  flex: 0 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem 5rem;
+  outline: 1px solid red; 
+}
+
+.interactionContainer > button {
+  padding: 0.3rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  text-align: start;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.userReviews {
+  display: flex;
+  gap: 5px;
+}
+
+/* For HeroTextOnly */
+.heroTextBody {
+  flex: 0 0;
+  display: flex;
+  outline: 1px solid red;
+}
+
+.heroTextInfo {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroTextInfo > .detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heroTextInfoPerson {
+  min-width: 0;
+  flex: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroTextInfo > img,
+.heroTextInfoPerson > img {
+  height: 400px;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.heroTextDetailsContainerShow {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heroTextDetailsContainerPerson {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.5rem
+}
+
+.heroTextInteractionContainer {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 10px;
+  margin-inline: 2rem;
+}
+
+.heroTextStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+
+.statusContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.statusBorder {
+  max-height: 100%;
+  width: 3px;
+  border-radius: 8px;
+  background-color: var(--border-color);
+}
+
+.statusTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.statusHeader {
+  font-weight: 700;
+}
+
+.statusButton {
+  padding: 0.5rem 4rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}

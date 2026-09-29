@@ -1,0 +1,12 @@
+.interests {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.interests > a {
+  padding: 0.3rem 1rem;
+  background-color: var(--border-color);
+  color: white;
+  border-radius: 12px;
+}

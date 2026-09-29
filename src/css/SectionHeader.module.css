@@ -1,0 +1,15 @@
+.sectionHeaderContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.leftBorder {
+  width: 5px;
+  min-height: 100%;
+  border-radius: 8px;
+  background-color: rgb(172, 13, 13);
+}
+
+.sectionHeaderContainer > span {
+  font-size: 1.5rem;
+}

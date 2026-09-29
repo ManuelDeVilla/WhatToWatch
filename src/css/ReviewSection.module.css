@@ -1,0 +1,145 @@
+.ratingsContainer {
+  display: flex;
+  outline: 1px solid red;
+}
+
+.overallRatings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratingTexts {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.ratingTexts svg {
+  height: 50px;
+  aspect-ratio: 1/1;
+}
+
+.rating {
+  font-size: 3rem;
+}
+
+.ratingNumber {
+  margin-left: 10px;
+}
+
+.userReviewContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 0.5rem;
+  /* outline: 1px solid green; */
+}
+
+.userReviewHeader {
+  text-align: center;
+}
+
+.histogramContainer {
+  flex: 1 1;
+  display: flex;
+  gap: 5px;
+}
+
+.barContainer {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 2px;
+}
+
+.bar {
+  min-height: 2px;
+  width: 100%;
+  background-color: rgb(172, 13, 13);
+  border-radius: 8px;
+}
+
+.reviewsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.reviewContainerHeader {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.reviewCarousel {
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.review {
+  flex: 0 0 49%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.5rem;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: black;
+  outline: 1px solid red;
+}
+
+.reviewHeader {
+  display: flex;
+  gap: 12px;
+}
+
+.user, .userRating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.user > img {
+  width: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.reviewTitle {
+  font-weight: 700;
+}
+
+.reviewBody {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.addReview {
+  display: flex;
+  gap: 6px;
+}
+
+.btnReview {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.btnReview:hover {
+  color: var(--border-color);
+  cursor: pointer;
+}

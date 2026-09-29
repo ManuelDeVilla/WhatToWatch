@@ -1,0 +1,91 @@
+.accordionContainer {
+  outline: 1px solid red;
+
+}
+
+.accordionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+
+.textButton {
+  display: flex;
+  gap: 10px;
+}
+
+.accordionGridContainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+}
+
+.accordionGridContainer.open {
+  grid-template-rows: 1fr;
+  padding: 0rem 1rem;
+
+}
+
+.accordionContent {
+  min-height: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid grey;
+}
+
+.item > img {
+  width: 50px;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.itemTextContainer {
+  flex: 1 0;
+}
+
+.showTitle { font-weight: 700; }
+
+.itemDetails {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating > svg {
+  width: 15px;
+  aspect-ratio: 1/1;
+}
+
+.bodyText {
+  color: rgb(130, 130, 130);
+  font-size: 0.8rem;
+}
+
+.itemLists {
+  display: flex;
+  gap: 10px;
+}
+
+.itemLists li:first-child {
+  display: none;
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

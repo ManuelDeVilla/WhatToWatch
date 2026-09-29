@@ -1,0 +1,16 @@
+.showsBatchContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  outline: green 1px solid;
+}
+
+.track {
+  display: flex;
+  gap: 25px;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 1px;
+  scroll-padding-left: 2px;
+}

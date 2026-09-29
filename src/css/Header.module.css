@@ -1,0 +1,48 @@
+.headerContainer {
+  height: 80px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  outline: 1px solid green;
+  z-index: 2;
+}
+
+.logoContainer {
+  flex: 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  outline: 1px solid red;
+}
+
+.logoText > span {
+  font-size: 1.5rem;;
+}
+
+
+.logoContainer > img{
+  height: 60px;
+  aspect-ratio: 1/1;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.navContainer button {
+  flex: 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}

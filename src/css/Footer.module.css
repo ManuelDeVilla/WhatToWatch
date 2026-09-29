@@ -1,0 +1,40 @@
+.footerContainer {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0;
+  outline: 1px solid red;
+}
+
+.footerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerText {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footerHeader > button{
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: rgb(172, 13, 13);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.containerFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerFooter > p > a {
+  color: blue;
+  text-decoration: underline;
+}

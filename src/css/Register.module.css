@@ -1,0 +1,119 @@
+.accountContainer,
+.loginTypes,
+.form,
+.alternativeLogin,
+.inputContainer,
+.interactionContainer,
+.interactionContainer > .signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountContainer {
+  height: 100dvh;
+  width: 25vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  gap: 1.5rem;
+  z-index: 100;
+  outline: 1px solid green;
+  background: white;
+  padding: 2rem 1rem;
+  transform: translateX(100%);
+
+}
+
+.accountContainer.open {
+  transform: translateX(0%);
+}
+
+.closeContainer {
+  align-self: end;
+}
+
+.closeContainer > button {
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.loginTypes {
+  gap: 1rem;
+}
+
+.form {
+  gap: 1rem;
+}
+
+input {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+}
+
+.alternativeLogin {
+  gap: 0.5rem;
+}
+
+.alternativeText {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.alternativeLogin > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-block: 0.2rem;
+  border-radius: 8px;
+  margin-inline: 1rem;
+  background: none;
+  border: 1px solid black;
+}
+
+.border {
+  flex: 1;
+  height: 1.5px;
+  background-color: black;
+}
+
+.alternativeText > span {
+  flex: 0;
+}
+
+.formHeader,
+.header {
+  text-align: center;
+}
+
+.formHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.inputContainer {
+  gap: 0.2rem;
+}
+
+.interactionContainer {
+  gap: 0.5rem;
+}
+
+.interactionContainer span,
+.interactionContainer button {
+  font-size: 0.8rem;
+}
+
+.signup {
+  gap: 0.5rem;
+}
+
+.signup > button {
+  align-self: center;
+  background: none;
+  border: none;
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+.sortContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.genre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid red;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.genre > svg {
+  width: 16px;
+  aspect-ratio: 1/1;
+  line-height: 1;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.interactionContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.interactionContainer > button {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordionHeader {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

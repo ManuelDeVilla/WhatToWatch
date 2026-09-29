@@ -1,0 +1,42 @@
+.castsContainer {
+  border-top: 1px solid grey;
+}
+
+.casts {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 0;
+  border-bottom: 1px solid grey;
+  text-decoration: none;
+  color: black;
+}
+
+.castLink {
+  justify-content: space-between;
+}
+
+.castLink > svg {
+  height: 10px;
+  aspect-ratio: 1/1;
+  margin-right: 20px;
+}
+
+.castHeader {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.castList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.castList li:first-child {
+  display: none
+}
+
+ul > li {
+  list-style-type: none;
+}
