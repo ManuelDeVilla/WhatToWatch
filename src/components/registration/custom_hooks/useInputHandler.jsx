@@ -11,7 +11,9 @@ export default function useInputHandler(setMessage) {
     email: '',
     password: ''
   })
+  const [formMessage, setFormMessage] = useState(null);
 
+  // For submitting the form
   useEffect(() => {
     const formElement = form.current;
     const submitElement = submit.current;
@@ -20,19 +22,12 @@ export default function useInputHandler(setMessage) {
 
     async function preventForm(e) {
       e.preventDefault();
-      const {data, error} = await submitSignUp(inputValues);
-      if (error) {
-        console.log(data)
-        console.log(`message: ${error.message}`)
-        console.log(`status: ${error.status}`)
-        console.log(`name: ${error.name}`)
-        console.log(`code: ${error.code}`)
-      }
+      const message = await submitSignUp(inputValues);
+      setFormMessage(message)
     }
 
     formElement.addEventListener('submit', preventForm);
     return () => formElement.removeEventListener('submit', preventForm);
-
   }, [inputValues]);
 
   // For input values
@@ -52,6 +47,7 @@ export default function useInputHandler(setMessage) {
     },
     handlers: {
       onChangeInputHandler
-    }
+    },
+    formMessage
   }
 }

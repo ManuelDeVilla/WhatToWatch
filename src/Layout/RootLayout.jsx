@@ -72,8 +72,7 @@ export default function RootLayout() {
       {
         message &&
         <Message
-          type={message?.type}
-          message={message?.message}
+          message={message}
           hide={hideMessage}
         />
       }

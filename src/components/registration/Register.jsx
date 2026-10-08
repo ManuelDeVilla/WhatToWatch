@@ -12,7 +12,7 @@ export default function Register({
   const {setMessage} = setters
   const closeButtonHandler = () => setEntryActive(false);
 
-  const {elements, inputState, handlers} = useInputHandler(setMessage);
+  const {elements, inputState, handlers, formMessage} = useInputHandler(setMessage);
   const {form, submit} = elements;
   const {inputValues} = inputState;
   const {onChangeInputHandler} = handlers;
@@ -30,6 +30,14 @@ export default function Register({
         <button onClick={closeButtonHandler}>X</button>
       </div>
       <span className={styles.formHeader}>Register</span>
+
+      {
+        // Show Errors
+        formMessage && (
+          <span>{formMessage.message}</span>
+        )
+      }
+
       <div className={styles.loginTypes}>
         <form ref={form} className={styles.form}>
           <div className={styles.inputContainer}>
