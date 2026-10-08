@@ -45,7 +45,7 @@ Users can also sign in using OAuth authentication, allowing them to have their o
 
 The application uses this data to provide users with information about the titles available through the application.
 
-For more information, visit the TMDB API Documentation.
+For more information, visit the [TMDB API Documentation](https://developer.themoviedb.org/docs/getting-started).
 
 > # Disclaimer: This product uses the TMDB API but is not endorsed or certified by TMDB.
 
