@@ -3,7 +3,7 @@ import useCarouselLogic from './useCarouselLogic';
 import styles from './css/ShowsCarousel.module.css';
 import dummyPoster from './assets/images/dummy_poster.jpg';
 import dummyPoster1 from './assets/images/dummy_poster2.jpg';
-import dummyPoster2 from './assets/images/dummy8.jpg';
+import dummyPoster2 from './assets/images/dummy_poster3.jpg';
 import PrevIcon from './assets/icons/previous.svg?react';
 import NextIcon from './assets/icons/next.svg?react';
 

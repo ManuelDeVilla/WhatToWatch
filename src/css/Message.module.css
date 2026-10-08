@@ -1,0 +1,48 @@
+.messageContainer {
+  width: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: black;
+  border-radius: 12px;
+  z-index: 101;
+  opacity: 95%;
+  transition: opacity 0.3s;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.messageContainer.hide {
+  animation: fadeOut 0.6s ease-out;
+}
+
+.messageContainer * {
+  color: white;
+}
+
+.messageContainer svg {
+  width: 50%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.messageContainer p {
+  font-size: 1rem;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import styles from './css/Accordion.module.css';
 import UpIcon from './assets/icons/up.svg?react';
 import StarIcon from './assets/icons/star.svg?react';
-import dummyPhoto from './assets/images/hoyeon4.jpg';
+import dummyPhoto from './assets/images/img_placeholder.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_POSTER_PATH } from './config/api';
 

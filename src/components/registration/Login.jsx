@@ -1,10 +1,15 @@
 import React from 'react'
 import styles from '../../css/Register.module.css'
 import GoogleIcon from '../../assets/icons/google.svg?react'
+import LoginWithGoogleBtn from './LoginWithGoogleBtn';
 
 export default function Login({entryStatus, sidebar}) {
   const {isEntryActive, setEntryActive}= entryStatus;
   const closeButtonHandler = () => setEntryActive(false);
+
+  const onChangeInputHandler = (e) => {
+    console.log(e.target);
+  }
 
   return (
     <div
@@ -23,7 +28,7 @@ export default function Login({entryStatus, sidebar}) {
         <form action="" className={styles.form}>
           <div className={styles.inputContainer}>
             <label htmlFor="email">Email:</label>
-            <input id='email' type="email" />
+            <input onChange={onChangeInputHandler} id='email' type="email" />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="password">Password:</label>
@@ -36,10 +41,7 @@ export default function Login({entryStatus, sidebar}) {
             <span>or</span>
             <div className={styles.border}></div>
           </div>
-          <button>
-              <GoogleIcon />
-              <span>Register with Google</span>
-          </button>
+          <LoginWithGoogleBtn text={'Login with Google'} />
         </div>
       </div>
       <div className={styles.interactionContainer}>

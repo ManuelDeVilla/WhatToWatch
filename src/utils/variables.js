@@ -1,3 +1,6 @@
+import SuccessIcon from '../assets/icons/success.svg?react';
+import ErrorIcon from '../assets/icons/error.svg?react'
+
 import { getTodayDate } from "./formatter";
 
 export const GENRE_MAP = {
@@ -28,4 +31,9 @@ export const LIST_TYPE_QUERY_PARAM = {
     movie: `primary_release_date.asc`,
     tv: `first_air_date.asc`
   }
+}
+
+export const ICONS = {
+  success: SuccessIcon,
+  error: ErrorIcon
 }

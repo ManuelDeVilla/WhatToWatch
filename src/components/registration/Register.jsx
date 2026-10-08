@@ -1,28 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../css/Register.module.css'
-import GoogleIcon from '../../assets/icons/google.svg?react'
+import LoginWithGoogleBtn from './LoginWithGoogleBtn'
+import useInputHandler from './custom_hooks/useInputHandler';
 
-export default function Register() {
+export default function Register({
+  entryStatus,
+  sidebar,
+  setters
+}) {
+  const {isEntryActive, setEntryActive} = entryStatus;
+  const {setMessage} = setters
+  const closeButtonHandler = () => setEntryActive(false);
+
+  const {elements, inputState, handlers} = useInputHandler(setMessage);
+  const {form, submit} = elements;
+  const {inputValues} = inputState;
+  const {onChangeInputHandler} = handlers;
+
   return (
-    <div className={styles.accountContainer}>
+    <div
+      ref={sidebar}
+      className={`${styles.accountContainer} 
+      ${isEntryActive
+        ? styles.open
+        : ''
+      }`}
+    >
       <div className={styles.closeContainer}>
-        <button>X</button>
+        <button onClick={closeButtonHandler}>X</button>
       </div>
       <span className={styles.formHeader}>Register</span>
       <div className={styles.loginTypes}>
-        <form action="" className={styles.form}>
+        <form ref={form} className={styles.form}>
           <div className={styles.inputContainer}>
-            <label htmlFor="email">Username:</label>
-            <input id='email' type="text" />
+            <label htmlFor="username">Username:</label>
+            <input onChange={onChangeInputHandler} id='username' type="text" />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="email">Email:</label>
-            <input id='email' type="email" />
+            <input onChange={onChangeInputHandler} id='email' type="email" />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="password">Password:</label>
-            <input id='password' type="password" />
+            <input onChange={onChangeInputHandler} id='password' type="password" />
           </div>
+          <button ref={submit} type='submit'>Submit</button>
         </form>
         <div className={styles.alternativeLogin}>
           <div className={styles.alternativeText}>
@@ -30,10 +52,7 @@ export default function Register() {
             <span>or</span>
             <div className={styles.border}></div>
           </div>
-          <button>
-              <GoogleIcon />
-              <span>Register with Google</span>
-          </button>
+          <LoginWithGoogleBtn text={'Create Account with Google'} />
         </div>
       </div>
       <div className={styles.interactionContainer}>

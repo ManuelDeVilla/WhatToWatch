@@ -4,7 +4,7 @@ import styles from './css/Home.module.css';
 
 //Config API Call
 import { BASE_URL } from './config/api.js';
-import {fetchBatch} from './utils/tmdb.js';
+import { fetchBatch } from './utils/tmdb.js';
 import { useLoaderData } from 'react-router-dom';
 
 export default function Home({setIsBrowserActive}) {

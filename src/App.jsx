@@ -4,6 +4,7 @@ import Home, { homeLoader } from './Home.jsx';
 import ShowDetails, { showDetailsLoader } from './ShowDetailsComponent/ShowDetails.jsx';
 import ShowLists, { showListLoader } from './BrowseComponent/ShowLists.jsx';
 import PersonDetails, { personDetailsLoader } from './ShowDetailsComponent/PersonDetails.jsx';
+import LoginRedirect from './components/registration/auth/LoginRedirect.jsx';
 
 export default function App() {
   const router = createBrowserRouter([
@@ -30,6 +31,10 @@ export default function App() {
           path: ':type/:id',
           element: <ShowDetails />,
           loader: showDetailsLoader
+        },
+        {
+          path: 'auth/callback',
+          element: <LoginRedirect />
         }
       ]
     }
