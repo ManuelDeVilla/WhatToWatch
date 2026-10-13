@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import useSubmitSignUp from '../handlers/submitSignUp';
 import submitSignUp from '../handlers/submitSignUp';
-import { useLocation, useNavigate } from 'react-router-dom';
+import checkInputs from '../utils/checkInput';
+import submitLogin from '../handlers/submitLogin';
 
-export default function useInputHandler(setMessage) {
+export default function useInputHandler(setEntryActive, authType) {
   const form = useRef(null);
   const submit = useRef(null);
   const [inputValues, setInputValues] = useState({
@@ -11,7 +11,10 @@ export default function useInputHandler(setMessage) {
     email: '',
     password: ''
   })
-  const [formMessage, setFormMessage] = useState(null);
+  const [formMessage, setFormMessage] = useState({
+    message: '',
+    type: ''
+  });
 
   // For submitting the form
   useEffect(() => {
@@ -22,8 +25,39 @@ export default function useInputHandler(setMessage) {
 
     async function preventForm(e) {
       e.preventDefault();
-      const message = await submitSignUp(inputValues);
-      setFormMessage(message)
+
+      // Checks first for inputs
+      const errors = checkInputs(inputValues, authType);
+      console.log(errors)
+      const hasError = Object.values(errors).some(arr => arr.length !== 0);
+
+      // If there are, update the state to an object and in UI should show below the input the mistakes made.
+      if (hasError) {
+        setFormMessage(errors);
+        console.log(errors)
+        return;
+      }
+
+      // If passed from input checks, then do the submitSignUp auth function.
+      try {
+        if (authType === 'REGISTER') {
+            await submitSignUp(inputValues, {
+              setInputValues,
+              setFormMessage,
+              setEntryActive
+            });
+        } else if (authType === 'LOGIN') {
+          await submitLogin(inputValues, {
+            setInputValues,
+            setFormMessage,
+            setEntryActive
+          })
+        }
+        
+      } catch(e) {
+        console.log(e)
+        setFormMessage('Something Unexpected happened. Please Try Again.')
+      }
     }
 
     formElement.addEventListener('submit', preventForm);

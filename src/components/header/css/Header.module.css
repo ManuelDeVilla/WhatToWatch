@@ -46,3 +46,40 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  outline: 1px solid red;
+}
+
+.userActionTab {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  padding-top: 0.5rem;
+}
+
+.userActionTab.active {
+  display: block;
+}
+
+.userMenu {
+  background: white;
+  border-radius: 12px;
+  outline: 1px solid red;
+  overflow: hidden; 
+}
+
+.userMenu > li {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.userMenu > li:hover {
+  background-color: black;
+  color: white;
+}

@@ -1,12 +1,13 @@
 import supabase from "../../../lib/api/supabase";
+import cleanStates from "../utils/cleanStates";
 
-export default async function submitSignUp(inputValues) {
-
+export default async function submitSignUp(inputValues, {states}) {
+  const {setFormMessage} = states;
   const usernameExists = await checkUsername(inputValues);
 
-  console.log(usernameExists)
   if (usernameExists) {
-    return {message: `Username already exists.`, type: 'error'}
+    setFormMessage({message: `Username already exists.`, type: 'error'})
+    return;
   }
 
   const { error } = await supabase.auth.signUp({
@@ -20,19 +21,19 @@ export default async function submitSignUp(inputValues) {
   });
 
   if (error) {
-    return {message: `Email already exists.`, type: 'error'}
+    setFormMessage({message: `Email already exists.`, type: 'error'})
+    return;
   }
 
-  return {message: `Registration Successful.`, type: 'success'}
+  cleanStates(states);
+  return;
 }
 
 async function checkUsername(inputValues) {
+  const username = inputValues.username;
   const { data, error } = await supabase.rpc('register_check_username', {
-    n_username: inputValues.username
+    n_username: username
   });
-
-  console.log(data)
-  console.log(error)
 
   if (error) {
     return error

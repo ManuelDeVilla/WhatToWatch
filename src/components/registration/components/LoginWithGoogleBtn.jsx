@@ -1,5 +1,5 @@
-import GoogleIcon from '../../assets/icons/google.svg?react'
-import supabase from '../../lib/api/supabase.js';
+import GoogleIcon from '../../../assets/icons/google.svg?react'
+import supabase from '../../../lib/api/supabase.js';
 
 export default function LoginWithGoogleBtn({text}) {
   const redirectTo = new URL('/auth/callback', window.location.origin).toString();

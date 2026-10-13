@@ -11,8 +11,6 @@ export default function Footer({cache}) {
     footerDataCaching({}, "", setFooterCachedData)
   }, [])
 
-  console.log(footerCachedData);
-
   return (
     <div className={ styles.footerContainer }>
       <div className={ styles.footerHeader }>

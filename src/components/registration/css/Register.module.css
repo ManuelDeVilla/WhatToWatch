@@ -117,3 +117,13 @@ input {
   border: none;
   font-weight: bold;
 }
+
+.error {
+  font-size: 0.7em;
+  color: red;
+}
+
+.error > li {
+  list-style-type: '- ';
+  list-style-position: inside;
+}

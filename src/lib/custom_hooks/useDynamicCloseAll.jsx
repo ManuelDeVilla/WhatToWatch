@@ -6,14 +6,12 @@ export default function useSidebarCloseAll(dynamicElement, dynamicTriggerElement
     if (!dynamicTriggerElement.current) return;
 
     function closeAllHandler(e) {
-
       if (e.target !== dynamicTriggerElement.current && !dynamicElement.current.contains(e.target)) {
         setIsActiveElement(false);
-        console.log('asda');
       }
     }
 
-    document.addEventListener('click', closeAllHandler)
-    return () => document.removeEventListener('click', closeAllHandler)
-  }, [])
+    document.addEventListener('mousedown', closeAllHandler)
+    return () => document.removeEventListener('mousedown', closeAllHandler)
+  }, [dynamicElement.current, dynamicTriggerElement.current])
 }

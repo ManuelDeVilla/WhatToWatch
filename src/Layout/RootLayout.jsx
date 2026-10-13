@@ -1,15 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, ScrollRestoration, useLocation, useNavigate } from 'react-router-dom'
-import Header from '../Header.jsx';
+import Header from '../components/header/Header.jsx';
 import Footer from '../Footer.jsx';
 import styles from '../css/RootLayout.module.css';
 import { SetFooterCacheContext } from '../lib/contexts/setCacheContext.js';
-import Login from '../components/registration/Login.jsx';
 import Register from '../components/registration/Register.jsx';
 import useDynamicElement from '../lib/custom_hooks/useDynamicElement.jsx';
 import Message from '../components/pop_ups/Message.jsx';
+import useAuth from '../lib/custom_hooks/useAuth.jsx';
+import AuthLayout from '../components/registration/AuthLayout.jsx';
 
 export default function RootLayout() {
+  // User Session Data
+  const session = useAuth();
+  console.log(session);
+
+  // Footer Cache Data
   const [footerCachedData, setFooterCachedData] = useState(null);
 
   // Application Root Messages
@@ -55,12 +61,12 @@ export default function RootLayout() {
     }
   }, [message])
 
-  // Dynamic For Login
+  // For Dynamic Auth form
   const {
     elementInformation: entrySidebarInfo,
     dynamicElement: entrySidebar,
     dynamicTriggerElement: entrySidebarTriggerElement
-  } = useDynamicElement()
+  } = useDynamicElement();
 
   const {
     isActiveElement: isEntryActive,
@@ -76,13 +82,12 @@ export default function RootLayout() {
           hide={hideMessage}
         />
       }
-      <Register 
+      <AuthLayout
         entryStatus={{
           isEntryActive,
           setEntryActive
         }}
         sidebar={entrySidebar}
-        setters={setMessage}
       />
       <Header
         setActiveElements={{
@@ -91,6 +96,7 @@ export default function RootLayout() {
         elementTrigger={{
           entrySidebarTriggerElement
         }}
+        session={session}
       />
       <main>
         <SetFooterCacheContext value={setFooterCachedData}>
