@@ -6,7 +6,7 @@ import NextIcon from '../assets/icons/next.svg?react';
 import PrevIcon from '../assets/icons/previous.svg?react';
 import ImageIcon from '../assets/icons/image.svg?react';
 import VideoIcon from '../assets/icons/video.svg?react';
-import useCarouselLogic from '../useCarouselLogic';
+import useCarouselLogic from '../components/ShowsCarousel/custom_hooks/useCarouselLogic';
 import { BASE_POSTER_PATH, TMDB_LINK } from '../config/api';
 import HeroHeader from './HeroHeader';
 

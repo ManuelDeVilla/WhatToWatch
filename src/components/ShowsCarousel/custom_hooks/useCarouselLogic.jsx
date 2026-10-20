@@ -15,7 +15,7 @@ export default function useCarouselLogic(deps = [], debugLabel) {
       left: 0,
       behavior: 'auto'
     })
-  }, [deps])
+  }, [deps]);
 
   // For resize observer
   // Checks if the component is overflowing
@@ -30,7 +30,7 @@ export default function useCarouselLogic(deps = [], debugLabel) {
 
     observer.observe(trackElement.current);
     return () => observer.disconnect();
-  }, [deps])
+  }, [deps]);
 
   // For intersection observer
   useEffect(() => {
@@ -58,34 +58,45 @@ export default function useCarouselLogic(deps = [], debugLabel) {
     observer.observe(lastElement);
 
     return () => observer.disconnect();
-  }, [deps])
+  }, [deps]);
+
+  const isScrolling = useRef(false);
+
+  useEffect(() => {
+    const track = trackElement.current;
+    if (!track) return;
+
+    function setFalseScrolling() {
+      isScrolling.current = false;
+    }
+
+    track.addEventListener('scrollend', setFalseScrolling);
+    return () => track.removeEventListener('scrollend', setFalseScrolling);
+  }, []);
 
   // Carousel Movement
   const moveCarousel = (direction) => {
-    if (!trackElement.current) return;
-    const clientWidth = trackElement.current.clientWidth;
-    const scrollWidth = trackElement.current.scrollWidth;
+    const track = trackElement.current;
+    if (!track) return;
+    if (isScrolling.current) return;
 
+    const {clientWidth, scrollWidth} = track;
+    let target = null;
+    
     if (!displayNextButton && direction === 'right') {
-      trackElement.current.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      })
-      return;
+      target = -scrollWidth;
+    } else if (!displayPrevButton && direction === 'left') {
+      target = scrollWidth - clientWidth;
+    } else {
+      target = direction === 'right' ? clientWidth : -clientWidth;
     }
 
-    if (!displayPrevButton && direction === 'left') {
-      trackElement.current.scrollTo({
-        left: scrollWidth - clientWidth,
-        behavior: 'smooth'
-      })
-      return;
-    }
-
-    trackElement.current.scrollBy({
-      left: direction === 'right' ? clientWidth : -clientWidth,
+    isScrolling.current = true;
+    track.scrollBy({
+      left: target,
       behavior: 'smooth'
     })
+    return;
   }
 
   return { 

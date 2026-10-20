@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import useCarouselLogic from './useCarouselLogic.jsx';
+import useCarouselLogic from './components/ShowsCarousel/custom_hooks/useCarouselLogic.jsx';
 import SectionHeader from './SectionHeader.jsx';
 import CarouselButtons from './CarouselButtons.jsx';
 import styles from './css/ReviewSection.module.css';

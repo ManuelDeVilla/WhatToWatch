@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Outlet, ScrollRestoration, useLocation, useNavigate } from 'react-router-dom'
-import Header from '../components/header/Header.jsx';
-import Footer from '../Footer.jsx';
-import styles from '../css/RootLayout.module.css';
-import { SetFooterCacheContext } from '../lib/contexts/setCacheContext.js';
-import Register from '../components/registration/Register.jsx';
-import useDynamicElement from '../lib/custom_hooks/useDynamicElement.jsx';
-import Message from '../components/pop_ups/Message.jsx';
-import useAuth from '../lib/custom_hooks/useAuth.jsx';
-import AuthLayout from '../components/registration/AuthLayout.jsx';
+import Header from '../../components/header/Header.jsx';
+import Footer from '../../Footer.jsx';
+import styles from './css/RootLayout.module.css';
+import { SetFooterCacheContext } from '../../lib/contexts/setCacheContext.js';
+import Register from '../../components/registration/Register.jsx';
+import useDynamicElement from '../../lib/custom_hooks/useDynamicElement.jsx';
+import Message from '../../components/pop_ups/Message.jsx';
+import useAuth from '../../lib/custom_hooks/useAuth.jsx';
+import AuthLayout from '../../components/registration/AuthLayout.jsx';
 
 export default function RootLayout() {
   // User Session Data
   const session = useAuth();
-  console.log(session);
+  // console.log(session);
 
   // Footer Cache Data
   const [footerCachedData, setFooterCachedData] = useState(null);
@@ -51,7 +51,6 @@ export default function RootLayout() {
       setMessage(null);
     }, 10000);
     const hideMessaegTimoutId = setTimeout(() => {
-      console.log('hide');
       setHideMessage(true);
     }, 9500)
 
@@ -67,7 +66,6 @@ export default function RootLayout() {
     dynamicElement: entrySidebar,
     dynamicTriggerElement: entrySidebarTriggerElement
   } = useDynamicElement();
-
   const {
     isActiveElement: isEntryActive,
     setIsActiveElement: setEntryActive
@@ -76,12 +74,15 @@ export default function RootLayout() {
   return (
     <div className={ styles.root }>
       {
+        /** For Showing Error Messages */
         message &&
         <Message
           message={message}
           hide={hideMessage}
         />
       }
+
+      {/* For Showing the Login/Register Side */}
       <AuthLayout
         entryStatus={{
           isEntryActive,
@@ -89,6 +90,8 @@ export default function RootLayout() {
         }}
         sidebar={entrySidebar}
       />
+
+      {/* For Showing Header */}
       <Header
         setActiveElements={{
           setEntryActive

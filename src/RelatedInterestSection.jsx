@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from './SectionHeader.jsx';
 import CarouselButtons from './CarouselButtons.jsx';
-import useCarouselLogic from './useCarouselLogic.jsx';
+import useCarouselLogic from './components/ShowsCarousel/custom_hooks/useCarouselLogic.jsx';
 import styles from './css/RelatedInterest.module.css';
 
 export default function RelatedInterestSection({genres}) {

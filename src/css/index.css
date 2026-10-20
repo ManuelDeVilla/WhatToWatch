@@ -14,12 +14,22 @@
   --border-color: rgb(165, 0, 0);
   --interFont: 'Inter', sans-serif;
   --montserattFont: 'Montserrat', sans-serif;
+  
+  /* Backgrounds */
+  --root-background-value: 10, 10, 15;
+  --root-background-color: rgb(var(--root-background-value));
+
+  /* Others */
+  --application-white-color: rgb(225, 225, 225);
+  --application-red-color: rgb(220, 38, 38);
+  --application-hover-red-color: rgb(167, 17, 17);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 svg {
@@ -28,12 +38,12 @@ svg {
   aspect-ratio: 1/1;
 }
 
-.black {
-  color: black;
+.white {
+  color: var(--application-white-color);
 }
 
 .red {
-  color: rgba(220, 38, 38);
+  color: var(--application-red-color);
 }
 
 h1, h2, h3, h4, .title {

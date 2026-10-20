@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import RootLayout from './Layout/RootLayout.jsx';
-import Home, { homeLoader } from './Home.jsx';
+import RootLayout from './Layout/root/RootLayout.jsx';
+import Home, { homeLoader } from './Layout/Home/Home.jsx';
 import ShowDetails, { showDetailsLoader } from './ShowDetailsComponent/ShowDetails.jsx';
 import ShowLists, { showListLoader } from './BrowseComponent/ShowLists.jsx';
 import PersonDetails, { personDetailsLoader } from './ShowDetailsComponent/PersonDetails.jsx';

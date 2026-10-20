@@ -7,8 +7,6 @@ export default function AuthLayout({entryStatus, sidebar}) {
   const [authType, setAuthType] = useState('LOGIN');
   const {isEntryActive, setEntryActive} = entryStatus;
 
-  console.log(isEntryActive)
-
   return (
     <div
       ref={sidebar}

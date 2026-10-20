@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './css/Header.module.css';
 import logo from '../../assets/images/WhatToWatch.png';
-import CatalogueLogo from '../../assets/icons/catalogue.svg?react';
+import MoviesLogo from '../../assets/icons/movies.svg?react';
+import SeriesLogo from '../../assets/icons/series.svg?react';
+import AnimeLogo from '../../assets/icons/anime.svg?react';
 import UserIcon from '../../assets/icons/user.svg?react';
 import { useEffect, useState } from 'react';
 import UserAction from './components/UserAction';
@@ -41,16 +43,24 @@ export default function Header({setActiveElements, elementTrigger, session}) {
       <Link to="/" className={ `${styles.logoContainer} ${'title'}` }>
         <img src={ logo } alt="WatchNext Logo" />
         <span className={ styles.logoText }>
-          <span className={ "black" }>What</span>
+          <span className={ "white" }>What</span>
           <span className={ "red" }>To</span>
-          <span className={ "black" }>Watch</span>
+          <span className={ "white" }>Watch</span>
         </span>
       </Link>
 
       <div className={ styles.navContainer }>
-        <button>
-          <CatalogueLogo className={ styles.navLogo } />
-          <span>Browse</span>
+        <button className={ styles.browseBtn }>
+          <MoviesLogo className={ styles.navLogo } />
+          <span>Movies</span>
+        </button>
+        <button className={ styles.browseBtn }>
+          <SeriesLogo className={ styles.navLogo } />
+          <span>Series</span>
+        </button>
+        <button className={ styles.browseBtn }>
+          <AnimeLogo className={ styles.navLogo } />
+          <span>Animes</span>
         </button>
         {
           session ? (
@@ -61,6 +71,7 @@ export default function Header({setActiveElements, elementTrigger, session}) {
           ) : (
             <button
               ref={entrySidebarTriggerElement}
+              className={ styles.browseBtn }
               onClick={openSideLogin}
             >
               Login

@@ -1,5 +1,5 @@
 import CastLists from '../CastLists';
-import useCarouselLogic from '../useCarouselLogic';
+import useCarouselLogic from '../components/ShowsCarousel/custom_hooks/useCarouselLogic';
 import styles from '../css/ShowsHeroMedia.module.css';
 import dummyPhoto from '../assets/images/img_placeholder.jpg';
 import NextIcon from '../assets/icons/next.svg?react';

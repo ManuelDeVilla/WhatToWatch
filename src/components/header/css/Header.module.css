@@ -1,12 +1,16 @@
 .headerContainer {
   height: 80px;
-  position: absolute;
+  position: fixed;
   inset: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  outline: 1px solid green;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--root-background-value), 0.9) 10%,
+    rgba(var(--root-background-value), 0) 100%
+  );
   z-index: 2;
 }
 
@@ -14,10 +18,8 @@
   flex: 0 0;
   display: flex;
   align-items: center;
-  gap: 10px;
   font-weight: 700;
   text-decoration: none;
-  outline: 1px solid red;
 }
 
 .logoText > span {
@@ -34,17 +36,32 @@
   display: flex;
   justify-content: end;
   gap: 10px;
+  padding: 0.2rem;
+
+  background-color: rgba(103, 103, 103, 0.19);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
 }
 
-.navContainer button {
+.navContainer >
+.browseBtn {
   flex: 0 0;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 12px;
-  font-weight: 600;
   cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+.browseBtn > svg {
+  width: 1.5em;
+  aspect-ratio: 1/1;
+  stroke: red;
+  fill: red;
 }
 
 .user {

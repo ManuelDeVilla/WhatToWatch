@@ -1,6 +1,6 @@
 import SectionHeader from './SectionHeader';
 import CarouselButtons from './CarouselButtons';
-import useCarouselLogic from './useCarouselLogic';
+import useCarouselLogic from './components/ShowsCarousel/custom_hooks/useCarouselLogic';
 import styles from './css/ShowsBatch.module.css';
 import ShowCard from './ShowCard';
 
