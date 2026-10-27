@@ -1,5 +1,5 @@
-import ShowsCarousel from '../../components/ShowsCarousel/ShowsCarousel.jsx';
-import ShowsBatch from '../../ShowsBatch.jsx';
+import ShowsCarousel from '../../components/shows_carousel/ShowsCarousel.jsx';
+import ShowsBatch from '../../components/shows_batch/ShowsBatch.jsx';
 import styles from './css/Home.module.css';
 
 //Config API Call

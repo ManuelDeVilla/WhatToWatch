@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './Layout/root/RootLayout.jsx';
 import Home, { homeLoader } from './Layout/Home/Home.jsx';
-import ShowDetails, { showDetailsLoader } from './ShowDetailsComponent/ShowDetails.jsx';
-import ShowLists, { showListLoader } from './BrowseComponent/ShowLists.jsx';
-import PersonDetails, { personDetailsLoader } from './ShowDetailsComponent/PersonDetails.jsx';
+import ShowDetails, { showDetailsLoader } from './Layout/details/shows/ShowDetails.jsx';
+import ShowLists, { showListLoader } from './Layout/show_list/ShowLists.jsx';
+import PersonDetails, {personDetailsLoader} from './Layout/details/persons/PersonDetails.jsx';
 import LoginRedirect from './components/registration/auth/LoginRedirect.jsx';
 
 export default function App() {
@@ -17,6 +17,8 @@ export default function App() {
           element: <Home />,
           loader: homeLoader
         },
+
+        // Types of lists [movie, tv, person]
         {
           path: ':type',
           element: <ShowLists />,
@@ -32,6 +34,14 @@ export default function App() {
           element: <ShowDetails />,
           loader: showDetailsLoader
         },
+
+        // Watchlist Group Page
+        {
+          path: '/watchgroup'
+        },
+
+        // AUTH
+        // For Logging in using google
         {
           path: 'auth/callback',
           element: <LoginRedirect />

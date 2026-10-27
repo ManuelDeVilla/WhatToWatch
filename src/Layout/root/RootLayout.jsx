@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Outlet, ScrollRestoration, useLocation, useNavigate } from 'react-router-dom'
 import Header from '../../components/header/Header.jsx';
-import Footer from '../../Footer.jsx';
+import Footer from '../../components/footer/Footer.jsx';
 import styles from './css/RootLayout.module.css';
 import { SetFooterCacheContext } from '../../lib/contexts/setCacheContext.js';
-import Register from '../../components/registration/Register.jsx';
 import useDynamicElement from '../../lib/custom_hooks/useDynamicElement.jsx';
-import Message from '../../components/pop_ups/Message.jsx';
+import Message from '../../components/pop_ups/message/Message.jsx';
 import useAuth from '../../lib/custom_hooks/useAuth.jsx';
 import AuthLayout from '../../components/registration/AuthLayout.jsx';
 
