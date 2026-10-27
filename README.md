@@ -1,4 +1,4 @@
-# WhatToWatch
+# [WhatToWatch](https://whattowatchmdb.vercel.app/)
 
 WhatToWatch is a movie and TV show database application that helps users discover movies and shows, view detailed information about them, write reviews, and organize what they want to watch.
 
